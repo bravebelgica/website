@@ -1,0 +1,9 @@
+git add assets/
+git add index-color.html
+git add index-image.html
+git add index-slideshow.html
+git add index-video.html
+git add index.html
+git add list.txt
+
+
