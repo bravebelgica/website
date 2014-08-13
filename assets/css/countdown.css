@@ -33,12 +33,15 @@
     padding: 8px;
 }
 #counter-default .timer-number {
-    font-size: 120px;
+	font-family: 'Slackey', cursive;
+	
+	font-size: 120px;
     margin-bottom: 10px;
     font-weight: 900;
-    color:#FFFFFF
+    color:rgba(236, 240, 241, 0.8);
 }
 #counter-default  .timer-text {
+	font-family: 'Slackey', cursive;
     padding: 12px;
     font-size:30px;
     font-weight:800;

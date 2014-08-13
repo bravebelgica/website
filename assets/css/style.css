@@ -15,7 +15,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Slackey', cursive;
     border: none;
     color: #ffffff;
     font-size: 14px;
@@ -51,7 +51,8 @@ a {
 }
 
 h1 {
-    font-size: 60px;
+	font-family: 'Slackey', cursive;
+    font-size: 70px;
     font-weight: 700;
     text-align: center;
 }
@@ -64,7 +65,8 @@ h2 {
 }
 
 h3 {
-    font-size: 25px;
+    font-family: 'Slackey', cursive;
+    font-size: 35px;
     line-height: 30px;
     font-weight: 700;
 }
@@ -74,6 +76,8 @@ h4 {
     font-size: 20px;
     line-height: 25px;
 }
+
+
 
 
 .hm-back-color, .abt-back-color, .srvc-back-color, .sb-back-color {
@@ -112,8 +116,8 @@ h4 {
     position: fixed;
     display: table;
     height: 100%;
-    width: 200px;
-    left: -160px;
+    width: 280px;
+    left: -200px;
     top: 0;
     background: rgba(119, 63, 19, 0.3);
     z-index: 999999;
@@ -205,7 +209,7 @@ h4 {
 /* ABOUT SECTION STYLES */
 
 .abt-back-color {
-    background-color: rgba(39, 109, 81, 1);
+    background-color: rgba(241, 196, 15, 0.6);
 }
 
 .progress {
@@ -215,14 +219,14 @@ h4 {
 /* SERVICES SECTION STYLES */
 
 .srvc-back-color {
-    background-color: rgba(10, 50, 102, 0.89);
+    background-color: rgba(230, 126, 34, 0.7);
 }
 
 
 /* SUBSCRIBE SECTION STYLES */
 
 .sb-back-color {
-    background-color: rgba(70, 22, 131, 0.83);
+    background-color: rgba(231, 76, 60, 0.83);
     padding-bottom: 80px;
 }
 
