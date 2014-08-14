@@ -51,9 +51,9 @@
             $(function () {
                 $.vegas('slideshow', {
                     backgrounds: [
-                      { src: 'assets/img/coc2.jpg', fade: 10000, delay: 900 }, //CHANGE THESE IMAGES WITH YOUR ORIGINAL IMAGES
-                       { src: 'assets/img/coc1.jpg', fade: 10000, delay: 900 }, //THESE IMAGES ARE FOR DEMO PURPOSE ONLY YOU, CAN NOT USE THEM WITHOUT AUTHORS PERMISSION
-                        { src: 'assets/img/coc3.jpg', fade: 10000, delay: 900 }, //SEE DOCUMENTATION FOR ORIGINAL URLs/LINKs OF IMAGES
+                      { src: 'assets/img/coc2.jpg', fade: 2000, delay: 15000 }, //CHANGE THESE IMAGES WITH YOUR ORIGINAL IMAGES
+                       { src: 'assets/img/coc1.jpg', fade: 2000, delay: 15000 }, //THESE IMAGES ARE FOR DEMO PURPOSE ONLY YOU, CAN NOT USE THEM WITHOUT AUTHORS PERMISSION
+                        { src: 'assets/img/coc3.jpg', fade: 2000, delay: 15000 }, //SEE DOCUMENTATION FOR ORIGINAL URLs/LINKs OF IMAGES
                         
                     ]
                 })('overlay', {
