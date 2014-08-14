@@ -52,9 +52,14 @@
                 $.vegas('slideshow', {
                     backgrounds: [
                       { src: 'assets/img/coc2.jpg', fade: 2000, delay: 15000 }, //CHANGE THESE IMAGES WITH YOUR ORIGINAL IMAGES
-                       { src: 'assets/img/coc1.jpg', fade: 2000, delay: 15000 }, //THESE IMAGES ARE FOR DEMO PURPOSE ONLY YOU, CAN NOT USE THEM WITHOUT AUTHORS PERMISSION
-                        { src: 'assets/img/coc3.jpg', fade: 2000, delay: 15000 }, //SEE DOCUMENTATION FOR ORIGINAL URLs/LINKs OF IMAGES
-                        
+                      { src: 'assets/img/coc1.jpg', fade: 2000, delay: 15000 }, //THESE IMAGES ARE FOR DEMO PURPOSE ONLY YOU, CAN NOT USE THEM WITHOUT AUTHORS PERMISSION
+                      { src: 'assets/img/coc3.jpg', fade: 2000, delay: 15000 }, //SEE DOCUMENTATION FOR ORIGINAL URLs/LINKs OF IMAGES
+                      { src: 'assets/img/coc4.jpg', fade: 2000, delay: 15000 },
+                      { src: 'assets/img/coc5.jpg', fade: 2000, delay: 15000 },
+                      { src: 'assets/img/coc6.jpg', fade: 2000, delay: 15000 },
+                      { src: 'assets/img/coc7.jpg', fade: 2000, delay: 15000 },
+                      { src: 'assets/img/coc8.jpg', fade: 2000, delay: 15000 },
+                      
                     ]
                 })('overlay', {
                     /** SLIDESHOW OVERLAY IMAGE **/
