@@ -53,6 +53,11 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
 }
+.shadow-3D {
+	color: #fff;
+	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 12px 12px #001135,0px 18px 10px #444;
+	
+}
 
 
 .text-shadow-large {
@@ -107,8 +112,9 @@ h4 {
     line-height: 25px;
 }
 
-
-
+.box-shadow {
+box-shadow: 10px 10px 5px #888888;
+}
 
 .hm-back-color, .abt-back-color, .srvc-back-color, .sb-back-color {
     padding-top: 50px;
@@ -174,10 +180,12 @@ h4 {
     }
 
         .navigatation a:hover {
-            color: #12CF7F;
+            /*color: #12CF7F;*/
+            color:rgba(245, 200, 30, 0.8);
             cursor: pointer;
             transition: all linear 0.2s;
             font-size: 20px; /* DO NOT REMOVE THIS */
+            text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #111 ;
         }
 
 .Icon-trigger {
@@ -256,7 +264,7 @@ h4 {
 /* SUBSCRIBE SECTION STYLES */
 
 .sb-back-color {
-    background-color: rgba(231, 76, 60, 0.83);
+    background-color: rgba(243, 156, 18,0.8);
     padding-bottom: 80px;
 }
 
