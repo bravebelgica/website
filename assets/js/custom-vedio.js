@@ -38,11 +38,11 @@
 
             $('.Icon-trigger span').click(function () {
                 if (
-            $('.left-panel').css('left') == '-160px') {
+            $('.left-panel').css('left') == '-200px') {
                     $('.left-panel').animate({ left: '0px' });
                 }
                 else
-                    $('.left-panel').animate({ left: '-160px' });
+                    $('.left-panel').animate({ left: '-200px' });
             });
 
             /** TUBULAR VEDIO FUNCTION  **/

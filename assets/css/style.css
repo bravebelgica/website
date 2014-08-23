@@ -22,6 +22,8 @@ html, body {
     text-shadow: 0px 2px 1px #000000;
 }
 
+#embossed h1 { text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000; color: #9c8468; opacity: 0.3; font: 80px 'Museo700'; }
+
 strong {
     font-size: 25px;
     text-shadow: 0px 3px 2px #000000;
@@ -59,7 +61,9 @@ h1, h2, h3, h4, h5, h6 {
 	
 }
 
-
+.hidden {
+	display : none;
+}
 .text-shadow-large {
 	text-shadow: 0px 15px 15px #4d4d4d;
 }
@@ -93,6 +97,7 @@ h1 {
 }
 
 h2 {
+	font-family: 'Slackey', cursive;
     font-size: 35px;
     line-height: 40px;
     font-weight: 700;
@@ -101,7 +106,7 @@ h2 {
 
 h3 {
     font-family: 'Slackey', cursive;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 30px;
     font-weight: 700;
 }
@@ -121,6 +126,12 @@ box-shadow: 10px 10px 5px #888888;
     padding-bottom: 50px;
 }
 
+.wapenschild{
+    background: url(assets/img/bb_wapenschild.png);
+    background-repeat: no-repeat;
+} 
+	
+}
 .sub-head {
     margin: 35px;
     font-size: 30px;
@@ -128,18 +139,36 @@ box-shadow: 10px 10px 5px #888888;
 }
 
 .divider {
-    width: 200px;
+    width: 600px;
     height: 4px;
-    background: #19CF7F;
+    background: #FFF;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
+    box-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555;
+}
+
+.divider-small {
+    width: 120px;
+    height: 3px;
+    background: #FFF;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #000;
+}
+.img-transparant {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
 .divider-two {
-    width: 200px;
-    height: 2px;
-    background: #19CF7F;
+    width: 400px;
+   	height: 3px;
+    background: #FFF;
     margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #000;
 }
 
 .margin-botom-50 {
@@ -152,12 +181,37 @@ box-shadow: 10px 10px 5px #888888;
     position: fixed;
     display: table;
     height: 100%;
-    width: 220px;
-    left: -160px;
+    width: 240px;
+    left: -200px;
     top: 0;
     background: rgba(119, 63, 19, 0.5);
-    z-index: 999999;
+    z-index: 99999;
 }
+/* Login panel */
+.comm-panel {
+	
+    
+	position: fixed;
+    /*display: table;*/
+    height: 250px;
+    width: 500px;
+    left: 240px;
+    top: -250px;
+    background: rgba(119, 63, 19, 0.5);
+    z-index: 99999;
+	
+}
+
+.comm-text {
+	margin: 20 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	width: 180px;
+    text-align: justify;
+    font-size: 18px;
+    
+}
+
 
 .menu-text {
     width: 180px;
@@ -260,6 +314,9 @@ box-shadow: 10px 10px 5px #888888;
     background-color: rgba(230, 126, 34, 0.7);
 }
 
+.member-back-color {
+    background-color: rgba(241, 196, 15, 0.6);
+}
 
 /* SUBSCRIBE SECTION STYLES */
 
@@ -282,6 +339,53 @@ box-shadow: 10px 10px 5px #888888;
 .font-30 {
     font-size: 30px;
 }
+
+.font-20 {
+    font-size: 20px;
+}
+
+
+
+/* Specials */ 
+.blink-me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+
+
+
+
 
 /* FOOTER SECTION STYLES */
 

@@ -11,11 +11,16 @@
 
 (function ($) {
     "use strict";
+    
+    
+    
     var mainApp = {
-
+    	menu : function() {
+    		alert("test");
+    	},	
 
         plusMain: function () {
-
+        	//this.menu();
             //FUNCTION TO SCROLL BETWEEN LEFT MENU LINKS
             $(function () {
                 $('nav a').bind('click', function (event) {
@@ -23,7 +28,7 @@
 
                     $('html, body').stop().animate({
                         scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1000, 'easeInOutExpo');
+                    }, 2500, 'easeInOutExpo');
                     /*
                     if you don't want to use the easing effects:
                     $('html, body').stop().animate({
@@ -36,17 +41,31 @@
 
 
             // MAIN FUNTION FOR TRIGGER LEFT MENU
-
-
+            var MENU_OFFSET = '-200px';
             $('.Icon-trigger span').click(function () {
                 if (
-            $('.left-panel').css('left') == '-160px') {
-                    $('.left-panel').animate({ left: '0px' });
+            $('.left-panel').css('left') == MENU_OFFSET) {
+                    $('.left-panel').animate({ left: '0px' }, 500, 'easeInOutExpo');
                 }
                 else
-                    $('.left-panel').animate({ left: '-160px' });
+                    $('.left-panel').animate({ left: MENU_OFFSET }, 1500, 'easeOutBounce');
             });
 
+            // MAIN FUNTION FOR COMM PANEL
+            var COMM_OFFSET = '-400px';
+            $('#comm').click(function () {
+            	
+                if (
+            $('.comm-panel').css('top') == COMM_OFFSET) {
+                    $('.comm-panel').animate({ top: '0px' });
+                }
+                else
+                    $('.comm-panel').animate({ top: COMM_OFFSET });
+            });
+           
+            
+            
+            
             /** VEGAS SLIDESHOW IMAGES  **/
             $(function () {
                 $.vegas('slideshow', {
@@ -69,11 +88,7 @@
 
             });
 
-            /*
-            YOU CAN WRITE 
-            YOUR SCRIPTS HERE
             
-            */
 
 
 
@@ -90,6 +105,11 @@
 
     $(document).ready(function () {
         mainApp.plusMain();
+    
+        $('.carousel').carousel({
+          interval: 2500
+        });
+    
     });
 
 

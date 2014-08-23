@@ -10,7 +10,7 @@
 var startDate = new Date("16/03/2013"); //THIS IS JUST FOR REFERENCE- DO NOT CHANGE THIS.
 
 //var endDate = new Date("08/20/2014"); //CHANGE THIS TO YOUR LAUNCHING DATE
-var endDate = new Date(2014, 7, 15, 20, 0, 0, 0) 
+var endDate = new Date(2014, 7, 24, 20, 0, 8, 0) 
 
 var dif = endDate.getTime() - startDate.getTime();
 var difToSecond = dif / 1000;
