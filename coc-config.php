@@ -12,13 +12,13 @@
 
 // ** MySQL settings  ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'bravebe1_wor0711');
+define('DB_SCHEMA', 'bravebe1_bravebelgica');
 
 /** MySQL database username */
-define('DB_USER', 'bravebe1_wor0711');
+define('DB_USER', 'bravebe1_laurent');
 
 /** MySQL database password */
-define('DB_PASSWORD', '8D3W67kc');
+define('DB_PASSWORD', 'bungee.7');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -31,12 +31,7 @@ define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
+ * @since 0.2.0
 */
 define('AUTH_KEY', '!|CCvCDThwJ?$dpW=V=+tIv<<IsW%mYpGh(zRFmlyAGmFA_]m(!weszGj!&@Cpoda*V)j[lK>D+bpjdgUS=CK&OpH+yAv>obL*SI)B<i*fCSeByKZ+ymQ>UrMPg&FWK&');
 define('SECURE_AUTH_KEY', 'F$yt/x[_+|;LxKor<soA^>ArV?U<TzXHdFS/ieOKFnJI<ogwqm/u$RZ)Z@Xhffn$kg+;MBQCux=(Yj(DLPBZ|YUSNUtfytAsUjwNag[BVm<;b>$&D/A]buah)zNxnSDn');
@@ -50,17 +45,16 @@ define('NONCE_SALT', 'ap+R*pfVlN@VkVRBzTS>CVx&Byy?A*AMKz[A}!;rIb<ESlP%oyGFi!NwTf
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
 */
-$table_prefix = 'wp_gobj_';
+$table_prefix = 'coc_gobj_';
 
 /**
- * WordPress Localized Language, defaults to English.
+ * Localized Language, defaults to English.
  *
- * Change this to localize WordPress. A corresponding MO file for the chosen
+ * Change this to localize the instalation. A corresponding MO file for the chosen
  * language must be installed to wp-content/languages. For example, install
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
@@ -68,13 +62,13 @@ $table_prefix = 'wp_gobj_';
 define('WPLANG', '');
 
 /**
- * For developers: WordPress debugging mode.
+ * For developers:  debugging mode.
  *
  * Change this to true to enable the display of notices during development.
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
 */
-define('WP_DEBUG', false);
+define('COC_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -83,6 +77,6 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once(ABSPATH . 'coc-settings.php');
 
 

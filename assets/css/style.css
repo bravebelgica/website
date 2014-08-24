@@ -84,6 +84,14 @@ a {
     text-decoration: none;
 }
 
+#status-section a {
+	
+}
+
+#status-section a:hover {
+	
+}
+
 .center {
 	font-family: 'Slackey', cursive;
     text-align: center;
@@ -303,6 +311,18 @@ box-shadow: 10px 10px 5px #888888;
 .abt-back-color {
     background-color: rgba(241, 196, 15, 0.6);
 }
+
+.status-back-color {
+    background-color: rgba(127, 140, 141,0.7);
+}
+
+.error-back-color {
+    background-color: rgba(192, 57, 43,0.8);
+}
+
+
+
+
 
 .progress {
     margin: 5px;
