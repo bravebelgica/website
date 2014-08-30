@@ -6,20 +6,29 @@ $text_invalid_email = "Bedankt voor de interesse in onze clan. U moet echter een
 $text_dberr = "Bedankt voor de interesse in onze clan. Wij ondervinden echter momenteel problemen op ons database systeem. Onze excuses voor het ongemak...probeert u later nog eens !<br> <br>";
 
 $back = "error-back-color";
+$bStatus = true;
+$bList = false;
+
+
 if ($status == 'VALID') {
 	$text= $text_valid_email;
 	$back = "status-back-color";
 } else if ($status == 'DBERR') {
 	$text= $text_dberr;
+} else if ($status == 'LIST') {
+	$bStatus = false;
+	$bList = true;
+	$back = "status-back-color";
+	
 } else {
 	$text= $text_invalid_email;
 }
 
-
 $returnurl = '/index.html?#subscribe-section'; 
 
-
 $bStatus = true;
+$bList = false;
+
 
 ?>
 
@@ -112,7 +121,53 @@ old integrated -->
 				</div>
 			</div>
 			</section>
-	</div>
+
+			
+
+		<section id="list-section" class="<?php  if (bStatus == true){ echo "hidden";} ?>" >
+		<!--<section id="status-section" class = "hidden">-->
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 <?php echo $back; ?>">
+					<div class="divider-two"></div>
+					<h2 class="center shadow-small">Brave Belgica Registraties</h2>
+					<div class="divider-two margin-botom-50"></div>
+					<!-- ./Headings -->
+
+					<div class="center">
+					
+						<span> 
+						<img	src="assets/img/bb_wapenschild.png"> <img src="assets/img/sirjoske.png"> <img src="assets/img/bb_wapenschild.png">
+						</span> 
+						<br>
+						
+					
+					</div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-0 ">
+					</div>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 center">
+					<?php echo $text ?>
+					<br>
+					
+					klik <a href=<?php echo $returnurl ?> >hier</a> om terug naar het hoofdscherm.
+					
+					<br>
+					<br>
+					
+					</div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-0 ">
+					</div>
+					
+					
+				</div>
+			</div>
+			</section>
+			
+			
+			
+			
+			
+			
+</div>
 	<!-- END MAIN CONTAINER -->
 	<!--REQUIRED SCRIPTS FILES-->
 	<!--SCRIPTS AT END SO PAGE WILL TAKE LESS TIME TO LOAD-->

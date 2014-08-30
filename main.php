@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="ldejonghe">
+<!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+<title>Brave Belgica CoC Clan </title>
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
+<!--PUT YOUR FAVICON HERE-->
+<!--REQUIRED STYLE SHEETS-->
+<!--MAIN BOOTSTRAP STYLE-->
+<link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<!--FONT AWESOME STYLE -->
+<!-- <link href="assets/plugins/font-awesome/font-awesome.min.css"
+	rel="stylesheet" />
+old integrated -->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!--VEGAS SLIDESHOW STYLE -->
+<link href="assets/plugins/vegas/jquery.vegas.min.css" rel="stylesheet" />
+<!--COUNTDOWN STYLE -->
+<link href="assets/css/countdown.css" rel="stylesheet" />
+<!--CUSTOM STYLE -->
+<link href="assets/css/style.css" rel="stylesheet" />
+
+<!-- custom fonts  -->
+<link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+<!--END REQUIRED STYLE SHEETS-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<!-- LEFT MENU SECTION -->
+	<section class="left-panel">
+		<nav class="navigatation">
+			<div class="menu-text">
+				<h3>MENU</h3>
+			</div>
+			<a href="#home-section">HOME</a> <a href="#about-section">CLAN</a> <a href="#member-section">LEDEN</a> <a href="#services-section">REGLEMENT</a> <a
+				href="#subscribe-section">INSCHRIJVEN</a> <a href="#subscribe-section">SCOREBOARD</a> <a href="#!" id="comm">INLOGGEN</a>
+		</nav>
+		<!-- ./Navigation links-->
+		<div id="social-links" class="Icon-trigger">
+			<span class="fa fa-bars"></span> <a href="https://www.facebook.com/groups/688041281267678/" target="_new" class="fa fa-facebook-square"></a> <a
+				href="https://twitter.com/BraveBelgica" target="_new" class="fa fa-twitter-square"></a> <a href="https://plus.google.com/u/0/110336605279204314951"
+				target="_new" class="fa fa-google-plus-square"></a>
+		</div>
+		<!-- ./Social links-->
+		<!-- ./Social links-->
+	</section>
+	<!--END LEFT MENU SECTION -->
+
+	<!-- COMMPANEL SECTION -->
+	<section class="comm-panel">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+				<!-- <div class="comm-text center">
+				<input class="form-control font-20 input-set shadow-small" type="text" placeholder="Gebruiker"> <br />
+				<input class="form-control font-20 input-set shadow-small" type="text" placeholder="Paswoord"> <br /> 
+				<input type="button" class="btn btn-success font-30 shadow-small box-shad.ow center " value="Inloggen" />
+			</div>
+			-->
+				<form class="form-signin" role="form">
+					<h2 class="form-signin-heading">Inloggen a.u.b.</h2>
+					<input type="email" class="form-control" placeholder="Email address" required autofocus> <input type="password" class="form-control"
+						placeholder="Password" required>
+					<div class="checkbox">
+						<label> <input type="checkbox" value="remember-me"> Onthoud mij
+						</label>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Inloggen</button>
+				</form>
+			</div>
+		</div>
+
+	</section>
+	<!--END LEFT MENU SECTION -->
+
+
+
+
+	<!-- MAIN CONTAINER -->
+	<div class="container">
+		<!-- HOME TITLE SECTION -->
+		<section id="home-section">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h1 class="shadow-3D">
+						<!-- Title -->
+						<span> <img src="assets/img/bb_wapenschild.png"> Brave Belgica  <img src="assets/img/bb_wapenschild.png">
+						</span>
+					</h1>
+					<h3 class="shadow-3D center hidden ">Versus</h3>
+					<h1 class="shadow-3D  hidden">
+						<!-- Title -->
+						Freedom
+
+					</h1>
+
+					<div class="divider"></div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3 id="oorlogstekst" class="center shadow-small hidden ">ClanWar ! Oorlog loopt af binnen...</h3>
+						<h3 id="vredestekst" class="center shadow-small ">Volgende oorlog start binnen...</h3>
+
+						<div id="counter"></div>
+						<div id="counter-default" class="row">
+							<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+								<div class="inner">
+									<div id="day-number" class="timer-number"></div>
+									<div class="timer-text">DAGEN</div>
+									<div class="progress medium  active">
+										<div id="day-bar" class="progress-bar bk-blue"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+								<div class="inner">
+									<div id="hour-number" class="timer-number"></div>
+									<div class="timer-text">UREN</div>
+									<div class="progress medium  active">
+										<div id="hour-bar" class="progress-bar bk-green"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+								<div class="inner">
+									<div id="minute-number" class="timer-number"></div>
+									<div class="timer-text">MINUTEN</div>
+									<div class="progress medium  active">
+										<div id="minute-bar" class="progress-bar bk-pink"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+								<div class="inner">
+									<div id="second-number" class="timer-number"></div>
+									<div class="timer-text">SECONDEN</div>
+
+									<div class="progress medium  active">
+										<div id="second-bar" class="progress-bar bk-red"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- ./Counter -->
+
+
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<!-- END HOME SECION -->
+		<!-- ABOUT SECION -->
+		<section id="about-section">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 abt-back-color">
+					<div class="divider-two"></div>
+					<h2 class="center shadow-small">Brave Belgica...wie zijn wij</h2>
+					<div class="divider-two margin-botom-50"></div>
+					<!-- ./Headings -->
+
+					<div class="center">
+						<p>Er waren eens....we schrijven anno 1293 ! In een klein dorpje in Vlaanderen wordt alles in gereedheid gebracht om de oogst binnen te halen.</p>
+						<br>
+						<p>Tot opeens in de verte het geroffel hoorbaar is van een horde krijgers op hun strijdros... Snel wordt nog geprobeerd om alarm te slaan in het dorp,
+							en zich alsng voor te bereiden op een zoveelste nieuwe veldslag. Vrouwen en kinderen worden in veiligheid gebracht in het groote stadhuis.</p>
+						<br>
+						<p>Maar deze barbaren zijn te sterk...en het dorp lijdt opnieuw zware verliezen. Enkele moedige dorpelingen slagen er toch nog in de barbaren te
+							verjagen, maar het is genoeg geweest !!! De dorpsraad wordt bijeengeeroepen en er moet actie volgen ! Er zit niets anders op dan zich te verenigen een
+							een clan te vormen, zich te bewapenen, en zelf deze barbaren te lijf te gaan.</p>
+						<br>Onder het sterke leiderschap van Sir Joske wordt een clan gevormd die vriend en vijand met verstomming doet slaan door de ene na de andere
+						barbarenclan te verslaan. Een legendarische clan is geboren ...<strong>'Brave Belgica'</strong> ! <br> <span> <img
+							src="assets/img/bb_wapenschild.png"> <img src="assets/img/sirjoske.png"> <img src="assets/img/bb_wapenschild.png">
+						</span> <br> <strong>Sir Joske (1247 - ...)</strong> <br>
+						<p></p>
+
+						<div class="blink-me">
+							<strong>!!!!! OPGELET !!!!!!</strong><br>
+						</div>
+						<p>(De enige echte Brave Belgica en Brave Lil' Belg clan zijn deze met geel-zwart wapenschild)</p>
+
+
+
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
+						<!--  
+                       
+                        
+                        <blockquote>
+                            Lorem ipsum dolor sit amet, Lorem ipsum  diam nonummy nibh euismod tincidunt. 
+                    Lorem ipsum dolor sit  tincidunt.  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt 
+                            consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+                        </blockquote>
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-check"></i>Lorem ipsum dolor sit amet consectetuer adipiscing elit</li>
+                            <li><i class="fa-li fa fa-check "></i>Lorem ipsum dolor sit amet consectetuer adipiscing elit</li>
+                            <li><i class="fa-li fa fa-check"></i>Lorem ipsum dolor sit amet consectetuer adipiscing elit</li>
+                            <li><i class="fa-li fa fa-check "></i>Lorem ipsum dolor sit amet consectetuer adipiscing elit</li>
+                        </ul>
+                        <b>Lorem ipsum dolor 
+                             sed diam nonummy nibh euismod tincidunt
+                            sit amet, Lorem ipsum  diam nonummy nibh euismod tincidunt. 
+                        </b>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                        </p>
+                        <blockquote>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                              sed diam nonummy nibh euismod tincidunt.
+                        </blockquote>
+                        <p>
+                            <span class="label label-default">Default</span>
+                            <span class="label label-primary">Primary</span>
+                            <span class="label label-success">Success</span>
+                            <span class="label label-info">Info</span>
+                            <span class="label label-warning">Warning</span>
+                            <span class="label label-danger">Danger</span>
+                        </p>
+                       
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="alert alert-warning">
+                            <strong>Lorem ipsum </strong>porem ipsum dolor sit
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.  
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-check"></i>Lorem ipsum elit</li>
+                            <li><i class="fa-li fa fa-check"></i>Lorem ipsum elit</li>
+                        </ul>
+                        <blockquote>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                              sed diam nonummy nibh euismod tincidunt.
+                        </blockquote>
+                        <div class="sliders">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <span class="sr-only">40% Complete (success)</span>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <span class="sr-only">20% Complete</span>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <span class="sr-only">60% Complete (warning)</span>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+					</div>
+
+				</div>
+
+			</div>
+			<!--./row-->
+
+		</section>
+		<!-- END ABOUT SECION -->
+		<!-- REGLEMENT SECTIE -->
+		<section id="services-section">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 srvc-back-color">
+					<div class="divider-two"></div>
+					<h2 class="center  shadow-small">Ons Reglement - Onze Waarden</h2>
+					<div class="divider-two margin-botom-50"></div>
+					<!-- ./Headings -->
+					<p class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 center">
+						In onze clan is het leuk vertoeven en gezellig, en vinden we een toffe mix van heel jonge en iets minder jonge (humhum) leden . Uiteraard willen we het
+						gezellig houden en daarom is het nodig dat iedereen zich een beetje aan bepaalde regels houdt. Doe je dit niet...tja, dan riskeer je een schoenmaat 55 van
+						Sir Joske...en vlieg je er onherroepelijk uit ! <br> <br>
+					<p class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 center blink-me">Vraag niet zelf om co-leider te worden,
+						wij houden netjes bij wie onze clan waardig is. Vraag je toch zelf om co te worden dan is dit slecht voor uw evaluatie</p>
+
+
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center">
+						<h3>
+							<!--  <i class="fa fa-desktop fa-2x main-color"></i>-->
+							<i class="fa fa-bomb fa-2x main-color shadow-small"></i>
+						</h3>
+						<h3 class="shadow-small">ACTIEF</h3>
+						<div class="divider-small"></div>
+						<p>Actief betekent :</p>
+						<ul>
+							<li>Toch regelmatig online</li>
+							<li>Deelnemen(!) aan de clanwars</li>
+
+
+						</ul>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center">
+						<h3>
+							<i class="fa fa-bank fa-2x main-color  shadow-small"></i>
+						</h3>
+						<h3 class="shadow-small">DONATIES</h3>
+						<div class="divider-small"></div>
+						<p>Doneer zoals het hoort</p>
+						<ul>
+							<li>Doneer wat gevraagd wordt</li>
+							<li>Doneer evenveel als je krijgt</li>
+							<li>Let op met reuzen, goblins, muurbrekers</li>
+
+						</ul>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center">
+						<h3>
+							<i class="fa fa-empire fa-2x main-color shadow-small"></i>
+						</h3>
+						<h3 class="shadow-small">STRATEGIE</h3>
+						<div class="divider-small"></div>
+						<p>Algemene strategie</p>
+						<ul>
+							<li>Focus niet op bekers</li>
+							<li>Farming...</li>
+							<li>Stadhuis binnen voor ClanWar</li>
+							<li>Mortieren goed beschermen</li>
+							<li>Mortier ver binnen muren</li>
+							<li>....</li>
+						</ul>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center">
+						<h3>
+							<i class="fa fa-users fa-2x main-color shadow-small"></i>
+						</h3>
+						<h3 class="shadow-small">JOINEN</h3>
+						<div class="divider-small"></div>
+						<p>2 Clans !!!</p>
+						<ul>
+							<li>Actief: Brave Belgica</li>
+							<li>Verlof: Brave Lil' Belg</li>
+							<li>Feeding:Brave Lil' Belg</li>
+
+						</ul>
+						<p>Stuur mail brave.belgica(at)gmail.com</p>
+
+
+
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center">
+						<h3>
+							<i class="fa fa-wechat fa-2x main-color shadow-small"></i>
+						</h3>
+						<h3 class="shadow-small">CHAT</h3>
+						<div class="divider-small"></div>
+						<p>Hou het netjes...</p>
+						<ul>
+							<li>Geen verwijten</li>
+							<li>geen grove taal</li>
+							<li>Geen vulgair taalgebruik</li>
+							<li>Geen eindeloos gezeur...</li>
+
+						</ul>
+
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 center">
+						<h3>
+							<i class="fa fa-rebel fa-2x main-color shadow-small"></i>
+						</h3>
+						<h3 class="shadow-small">CLANS</h3>
+						<div class="divider-small"></div>
+						<ul>
+							<li>Brave Belgica</li>
+							<li>Brave Lil' Belg</li>
+						</ul>
+					</div>
+
+					<p class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 center">Als je veel te vertellen hebt, of iets wil
+						delen, gebruik liver de FB of Google+ pagina</p>
+
+
+				</div>
+
+			</div>
+
+			<!--./row-->
+		</section>
+
+<!--
+		<section id="member-section">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 member-back-color">
+					<div class="divider-two"></div>
+					<h2 class="center  shadow-small">Onze clanleden</h2>
+					<div class="divider-two margin-botom-50"></div>
+
+
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="assets/img/sirjoske.png" alt="" />
+								<div class="carousel-caption center">
+									<h3>Sir Joske</h3>
+									<p>Leider...streng maar rechtvaardig</p>
+								</div>
+							</div>
+							<div class="item">
+							<img src="assets/img/kayheks.png" alt="" />
+								<div class="carousel-caption center">
+									<h3>Kay</h3>
+									<p>Co-leider : sluw, listig...</p>
+								</div>
+							
+						</div>
+						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> 
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						</a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> 
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+-->
+
+
+
+		<!--END SERVICES SECION -->
+		<!-- SUBSCRIBE SECION -->
+		<section id="subscribe-section">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sb-back-color">
+					<div class="divider-two"></div>
+					<h2 class="center shadow-small">Vervoeg onze clan</h2>
+					<div class="divider-two margin-botom-50"></div>
+					<!-- ./Headings -->
+					<p class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 center">U wenst onze clan te vervoegen ? Schrijf u nu
+						in voor registratie. Wanneer u uw email adres opgeeft sturen wij u een uitnodigingsmail met alle gegevens.</p>
+					<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 center">
+						<p class="set-sb ">
+<form action="subscribe.php" method="post">
+							<input class="form-control font-30 input-set shadow-small" type="text" placeholder="Uw emailadres"  name="Email"> <br /> 
+							<input type="submit"
+								class="btn btn-success font-30 shadow-small box-shad.ow" value="Nu Inschrijven" />
+						</p>
+</form>
+
+					</div>
+					<p class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 center">
+						Uw email zal <strong>niet </strong>gebruikt worden voor commerciële doeleinden noch worden doorgegeven aan derden. Deze email dient enkel om u verder te
+						informeren omtrent aansluiting.
+					</p>
+					<img class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 center" src="assets/img/coc_logo.png"> <br>
+					<p class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 center">
+						<strong class="center">&copy; www.bravebelgica.com 2014</strong> <br> Laurentius.
+					</p>
+
+				</div>
+
+
+			</div>
+			<!--./row-->
+		</section>
+		<!-- END SUBSCRIBE SECION -->
+		<!-- FOOTER SECION -->
+		<section id="footer">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center "></div>
+
+			</div>
+			<!--./row-->
+		</section>
+		<!--END FOOTER SECION -->
+		<!-- FOOTER SECION -->
+		<section id="legal-supercell">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center abt-back-color">This web site/application is not affiliated with, endorsed, sponsored, or
+					specifically approved by Supercell. Supercell is not responsible for the operation or content of this site/application. Use the trademarks and other
+					intellectual property of Supercell is only as expressly permitted as set forth in Supercell’s Fan Site Kit Agreement located at www.supercell.com.” For
+					more information about Supercell, please visit their website at www.supercell.com</div>
+			</div>
+			<!--./row-->
+		</section>
+
+
+
+
+		<!--END FOOTER SECION -->
+	</div>
+	<!-- END MAIN CONTAINER -->
+	<!--REQUIRED SCRIPTS FILES-->
+	<!--SCRIPTS AT END SO PAGE WILL TAKE LESS TIME TO LOAD-->
+	<!--REQUIRED CORE JQUERY SCRIPTS FILE-->
+	<script src="assets/plugins/jquery.min.js"></script>
+	<!--REQUIRED BOOTSTRAP SCRIPTS FILE-->
+	<script src="assets/plugins/bootstrap/bootstrap.js"></script>
+	<!--REQUIRED SCRIPT FILES FOR JQUERY COUNTDOWN-->
+	<script src="assets/plugins/countdown/jquery.countdown.js"></script>
+	<script src="assets/js/countdown.js"></script>
+
+	<!-- Start experimental video-->
+	<script type="text/javascript" charset="utf-8" src="js/jquery.tubular.1.0.js"></script>
+
+	<!--REQUIRED SCRIPT FILE FOR VEGAS BACKGROUND SLIDESHOW-->
+	<script src="assets/plugins/vegas/jquery.vegas.min.js"></script>
+	<!--REQUIRED SCRIPT FOR SCROLLING MENU LINKS-->
+	<script src="assets/plugins/jquery.easing.1.3.js"></script>
+	<!--REQUIRED CUSTOM SCRIPT FILE-->
+	<script src="assets/js/custom-slideshow.js"></script>
+	<!--END REQUIRED SCRIPTS FILES-->
+
+</body>
+
+
+</html>
+

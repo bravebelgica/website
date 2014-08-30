@@ -11,22 +11,11 @@
 */
 
 // ** MySQL settings  ** //
-/** The name of the database for WordPress */
 define('DB_SCHEMA', 'bravebe1_bravebelgica');
-
-/** MySQL database username */
 define('DB_USER', 'bravebe1_laurent');
-
-/** MySQL database password */
 define('DB_PASSWORD', 'bungee.7');
-
-/** MySQL hostname */
 define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
 /**#@+
@@ -70,13 +59,14 @@ define('WPLANG', '');
 */
 define('COC_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
 
-/** Absolute path to the WordPress directory. */
+
+/** Absolute path to the COC directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'coc-settings.php');
+/** Sets up COC vars and included files. */
+#require_once(ABSPATH . 'coc-settings.php');
+
 
 

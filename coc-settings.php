@@ -18,8 +18,8 @@
 define( 'COCINC', 'coc-includes' );
 
 // Include files required for initialization.
-require( ABSPATH . COCINC . '/load.php' );
-require( ABSPATH . COCINC . '/default-constants.php' );
+#require( ABSPATH . COCINC . '/load.php' );
+#require( ABSPATH . COCINC . '/default-constants.php' );
 
 /*
  * These can't be directly globalized in version.php. When updating,
@@ -29,7 +29,7 @@ require( ABSPATH . COCINC . '/default-constants.php' );
 global $coc_version, $coc_db_version, $tinymce_version, $required_php_version, $required_mysql_version;
 require( ABSPATH . COCINC . '/version.php' );
 
-// Set initial default constants including WP_MEMORY_LIMIT, WP_MAX_MEMORY_LIMIT, WP_DEBUG, WP_CONTENT_DIR and WP_CACHE.
+// Set initial default constants including coc_MEMORY_LIMIT, coc_MAX_MEMORY_LIMIT, coc_DEBUG, coc_CONTENT_DIR and coc_CACHE.
 coc_initial_constants();
 
 // Check for the required PHP version and for the MySQL extension or a database drop-in.
@@ -57,41 +57,41 @@ coc_maintenance();
 // Start loading timer.
 timer_start();
 
-// Check if we're in WP_DEBUG mode.
+// Check if we're in coc_DEBUG mode.
 coc_debug_mode();
 
 // For an advanced caching plugin to use. Uses a static drop-in because you would only want one.
 if ( COC_CACHE )
 	COC_DEBUG ? include( COC_CONTENT_DIR . '/advanced-cache.php' ) : @include( COC_CONTENT_DIR . '/advanced-cache.php' );
 
-// Define WP_LANG_DIR if not set.
+// Define coc_LANG_DIR if not set.
 coc_set_lang_dir();
 
 // Load early WordPress files.
-require( ABSPATH . WPINC . '/compat.php' );
-require( ABSPATH . WPINC . '/functions.php' );
-require( ABSPATH . WPINC . '/class-wp.php' );
-require( ABSPATH . WPINC . '/class-wp-error.php' );
-require( ABSPATH . WPINC . '/plugin.php' );
-require( ABSPATH . WPINC . '/pomo/mo.php' );
+require( ABSPATH . COCINC . '/compat.php' );
+require( ABSPATH . COCINC . '/functions.php' );
+require( ABSPATH . COCINC . '/class-wp.php' );
+require( ABSPATH . COCINC . '/class-wp-error.php' );
+require( ABSPATH . COCINC . '/plugin.php' );
+require( ABSPATH . COCINC . '/pomo/mo.php' );
 
 // Include the wpdb class and, if present, a db.php database drop-in.
-require_wp_db();
+require_coc_db();
 
 // Set the database table prefix and the format specifiers for database table columns.
 $GLOBALS['table_prefix'] = $table_prefix;
-wp_set_wpdb_vars();
+coc_set_cocdb_vars();
 
 // Start the WordPress object cache, or an external object cache if the drop-in is present.
-wp_start_object_cache();
+coc_start_object_cache();
 
 // Attach the default filters.
-require( ABSPATH . WPINC . '/default-filters.php' );
+require( ABSPATH . COCINC . '/default-filters.php' );
 
 // Initialize multisite if enabled.
 if ( is_multisite() ) {
-	require( ABSPATH . WPINC . '/ms-blogs.php' );
-	require( ABSPATH . WPINC . '/ms-settings.php' );
+	require( ABSPATH . COCINC . '/ms-blogs.php' );
+	require( ABSPATH . COCINC . '/ms-settings.php' );
 } elseif ( ! defined( 'MULTISITE' ) ) {
 	define( 'MULTISITE', false );
 }
@@ -103,79 +103,79 @@ if ( SHORTINIT )
 	return false;
 
 // Load the L10n library.
-require_once( ABSPATH . WPINC . '/l10n.php' );
+require_once( ABSPATH . COCINC . '/l10n.php' );
 
 // Run the installer if WordPress is not installed.
-wp_not_installed();
+coc_not_installed();
 
 // Load most of WordPress.
-require( ABSPATH . WPINC . '/class-wp-walker.php' );
-require( ABSPATH . WPINC . '/class-wp-ajax-response.php' );
-require( ABSPATH . WPINC . '/formatting.php' );
-require( ABSPATH . WPINC . '/capabilities.php' );
-require( ABSPATH . WPINC . '/query.php' );
-require( ABSPATH . WPINC . '/date.php' );
-require( ABSPATH . WPINC . '/theme.php' );
-require( ABSPATH . WPINC . '/class-wp-theme.php' );
-require( ABSPATH . WPINC . '/template.php' );
-require( ABSPATH . WPINC . '/user.php' );
-require( ABSPATH . WPINC . '/meta.php' );
-require( ABSPATH . WPINC . '/general-template.php' );
-require( ABSPATH . WPINC . '/link-template.php' );
-require( ABSPATH . WPINC . '/author-template.php' );
-require( ABSPATH . WPINC . '/post.php' );
-require( ABSPATH . WPINC . '/post-template.php' );
-require( ABSPATH . WPINC . '/revision.php' );
-require( ABSPATH . WPINC . '/post-formats.php' );
-require( ABSPATH . WPINC . '/post-thumbnail-template.php' );
-require( ABSPATH . WPINC . '/category.php' );
-require( ABSPATH . WPINC . '/category-template.php' );
-require( ABSPATH . WPINC . '/comment.php' );
-require( ABSPATH . WPINC . '/comment-template.php' );
-require( ABSPATH . WPINC . '/rewrite.php' );
-require( ABSPATH . WPINC . '/feed.php' );
-require( ABSPATH . WPINC . '/bookmark.php' );
-require( ABSPATH . WPINC . '/bookmark-template.php' );
-require( ABSPATH . WPINC . '/kses.php' );
-require( ABSPATH . WPINC . '/cron.php' );
-require( ABSPATH . WPINC . '/deprecated.php' );
-require( ABSPATH . WPINC . '/script-loader.php' );
-require( ABSPATH . WPINC . '/taxonomy.php' );
-require( ABSPATH . WPINC . '/update.php' );
-require( ABSPATH . WPINC . '/canonical.php' );
-require( ABSPATH . WPINC . '/shortcodes.php' );
-require( ABSPATH . WPINC . '/class-wp-embed.php' );
-require( ABSPATH . WPINC . '/media.php' );
-require( ABSPATH . WPINC . '/http.php' );
-require( ABSPATH . WPINC . '/class-http.php' );
-require( ABSPATH . WPINC . '/widgets.php' );
-require( ABSPATH . WPINC . '/nav-menu.php' );
-require( ABSPATH . WPINC . '/nav-menu-template.php' );
-require( ABSPATH . WPINC . '/admin-bar.php' );
+require( ABSPATH . COCINC . '/class-wp-walker.php' );
+require( ABSPATH . COCINC . '/class-wp-ajax-response.php' );
+require( ABSPATH . COCINC . '/formatting.php' );
+require( ABSPATH . COCINC . '/capabilities.php' );
+require( ABSPATH . COCINC . '/query.php' );
+require( ABSPATH . COCINC . '/date.php' );
+require( ABSPATH . COCINC . '/theme.php' );
+require( ABSPATH . COCINC . '/class-wp-theme.php' );
+require( ABSPATH . COCINC . '/template.php' );
+require( ABSPATH . COCINC . '/user.php' );
+require( ABSPATH . COCINC . '/meta.php' );
+require( ABSPATH . COCINC . '/general-template.php' );
+require( ABSPATH . COCINC . '/link-template.php' );
+require( ABSPATH . COCINC . '/author-template.php' );
+require( ABSPATH . COCINC . '/post.php' );
+require( ABSPATH . COCINC . '/post-template.php' );
+require( ABSPATH . COCINC . '/revision.php' );
+require( ABSPATH . COCINC . '/post-formats.php' );
+require( ABSPATH . COCINC . '/post-thumbnail-template.php' );
+require( ABSPATH . COCINC . '/category.php' );
+require( ABSPATH . COCINC . '/category-template.php' );
+require( ABSPATH . COCINC . '/comment.php' );
+require( ABSPATH . COCINC . '/comment-template.php' );
+require( ABSPATH . COCINC . '/rewrite.php' );
+require( ABSPATH . COCINC . '/feed.php' );
+require( ABSPATH . COCINC . '/bookmark.php' );
+require( ABSPATH . COCINC . '/bookmark-template.php' );
+require( ABSPATH . COCINC . '/kses.php' );
+require( ABSPATH . COCINC . '/cron.php' );
+require( ABSPATH . COCINC . '/deprecated.php' );
+require( ABSPATH . COCINC . '/script-loader.php' );
+require( ABSPATH . COCINC . '/taxonomy.php' );
+require( ABSPATH . COCINC . '/update.php' );
+require( ABSPATH . COCINC . '/canonical.php' );
+require( ABSPATH . COCINC . '/shortcodes.php' );
+require( ABSPATH . COCINC . '/class-wp-embed.php' );
+require( ABSPATH . COCINC . '/media.php' );
+require( ABSPATH . COCINC . '/http.php' );
+require( ABSPATH . COCINC . '/class-http.php' );
+require( ABSPATH . COCINC . '/widgets.php' );
+require( ABSPATH . COCINC . '/nav-menu.php' );
+require( ABSPATH . COCINC . '/nav-menu-template.php' );
+require( ABSPATH . COCINC . '/admin-bar.php' );
 
 // Load multisite-specific files.
 if ( is_multisite() ) {
-	require( ABSPATH . WPINC . '/ms-functions.php' );
-	require( ABSPATH . WPINC . '/ms-default-filters.php' );
-	require( ABSPATH . WPINC . '/ms-deprecated.php' );
+	require( ABSPATH . COCINC . '/ms-functions.php' );
+	require( ABSPATH . COCINC . '/ms-default-filters.php' );
+	require( ABSPATH . COCINC . '/ms-deprecated.php' );
 }
 
 // Define constants that rely on the API to obtain the default value.
 // Define must-use plugin directory constants, which may be overridden in the sunrise.php drop-in.
-wp_plugin_directory_constants();
+coc_plugin_directory_constants();
 
-$GLOBALS['wp_plugin_paths'] = array();
+$GLOBALS['coc_plugin_paths'] = array();
 
 // Load must-use plugins.
-foreach ( wp_get_mu_plugins() as $mu_plugin ) {
+foreach ( coc_get_mu_plugins() as $mu_plugin ) {
 	include_once( $mu_plugin );
 }
 unset( $mu_plugin );
 
 // Load network activated plugins.
 if ( is_multisite() ) {
-	foreach( wp_get_active_network_plugins() as $network_plugin ) {
-		wp_register_plugin_realpath( $network_plugin );
+	foreach( coc_get_active_network_plugins() as $network_plugin ) {
+		coc_register_plugin_realpath( $network_plugin );
 		include_once( $network_plugin );
 	}
 	unset( $network_plugin );
@@ -192,13 +192,13 @@ if ( is_multisite() )
 	ms_cookie_constants(  );
 
 // Define constants after multisite is loaded. Cookie-related constants may be overridden in ms_network_cookies().
-wp_cookie_constants();
+coc_cookie_constants();
 
 // Define and enforce our SSL constants
-wp_ssl_constants();
+coc_ssl_constants();
 
 // Create common globals.
-require( ABSPATH . WPINC . '/vars.php' );
+require( ABSPATH . COCINC . '/vars.php' );
 
 // Make taxonomies and posts available to plugins and themes.
 // @plugin authors: warning: these get registered again on the init hook.
@@ -209,22 +209,22 @@ create_initial_post_types();
 register_theme_directory( get_theme_root() );
 
 // Load active plugins.
-foreach ( wp_get_active_and_valid_plugins() as $plugin ) {
-	wp_register_plugin_realpath( $plugin );
+foreach ( coc_get_active_and_valid_plugins() as $plugin ) {
+	coc_register_plugin_realpath( $plugin );
 	include_once( $plugin );
 }
 unset( $plugin );
 
 // Load pluggable functions.
-require( ABSPATH . WPINC . '/pluggable.php' );
-require( ABSPATH . WPINC . '/pluggable-deprecated.php' );
+require( ABSPATH . COCINC . '/pluggable.php' );
+require( ABSPATH . COCINC . '/pluggable-deprecated.php' );
 
 // Set internal encoding.
-wp_set_internal_encoding();
+coc_set_internal_encoding();
 
-// Run wp_cache_postload() if object cache is enabled and the function exists.
-if ( WP_CACHE && function_exists( 'wp_cache_postload' ) )
-	wp_cache_postload();
+// Run coc_cache_postload() if object cache is enabled and the function exists.
+if ( coc_CACHE && function_exists( 'coc_cache_postload' ) )
+	coc_cache_postload();
 
 /**
  * Fires once activated plugins have loaded.
@@ -236,10 +236,10 @@ if ( WP_CACHE && function_exists( 'wp_cache_postload' ) )
 do_action( 'plugins_loaded' );
 
 // Define constants which affect functionality if not already defined.
-wp_functionality_constants();
+coc_functionality_constants();
 
 // Add magic quotes and set up $_REQUEST ( $_GET + $_POST )
-wp_magic_quotes();
+coc_magic_quotes();
 
 /**
  * Fires when comment cookies are sanitized.
@@ -250,25 +250,25 @@ do_action( 'sanitize_comment_cookies' );
 
 /**
  * WordPress Query object
- * @global object $wp_the_query
+ * @global object $coc_the_query
  * @since 2.0.0
  */
-$GLOBALS['wp_the_query'] = new WP_Query();
+$GLOBALS['coc_the_query'] = new COC_Query();
 
 /**
- * Holds the reference to @see $wp_the_query
+ * Holds the reference to @see $coc_the_query
  * Use this global for WordPress queries
- * @global object $wp_query
+ * @global object $coc_query
  * @since 1.5.0
  */
-$GLOBALS['wp_query'] = $GLOBALS['wp_the_query'];
+$GLOBALS['coc_query'] = $GLOBALS['coc_the_query'];
 
 /**
  * Holds the WordPress Rewrite object for creating pretty URLs
- * @global object $wp_rewrite
+ * @global object $coc_rewrite
  * @since 1.5.0
  */
-$GLOBALS['wp_rewrite'] = new WP_Rewrite();
+$GLOBALS['coc_rewrite'] = new COC_Rewrite();
 
 /**
  * WordPress Object
@@ -279,17 +279,17 @@ $GLOBALS['wp'] = new WP();
 
 /**
  * WordPress Widget Factory Object
- * @global object $wp_widget_factory
+ * @global object $coc_widget_factory
  * @since 2.8.0
  */
-$GLOBALS['wp_widget_factory'] = new WP_Widget_Factory();
+$GLOBALS['coc_widget_factory'] = new COC_Widget_Factory();
 
 /**
  * WordPress User Roles
- * @global object $wp_roles
+ * @global object $coc_roles
  * @since 2.0.0
  */
-$GLOBALS['wp_roles'] = new WP_Roles();
+$GLOBALS['coc_roles'] = new COC_Roles();
 
 /**
  * Fires before the theme is loaded.
@@ -299,29 +299,29 @@ $GLOBALS['wp_roles'] = new WP_Roles();
 do_action( 'setup_theme' );
 
 // Define the template related constants.
-wp_templating_constants(  );
+coc_templating_constants(  );
 
 // Load the default text localization domain.
 load_default_textdomain();
 
 $locale = get_locale();
-$locale_file = WP_LANG_DIR . "/$locale.php";
+$locale_file = coc_LANG_DIR . "/$locale.php";
 if ( ( 0 === validate_file( $locale ) ) && is_readable( $locale_file ) )
 	require( $locale_file );
 unset( $locale_file );
 
 // Pull in locale data after loading text domain.
-require_once( ABSPATH . WPINC . '/locale.php' );
+require_once( ABSPATH . COCINC . '/locale.php' );
 
 /**
  * WordPress Locale object for loading locale domain date and various strings.
- * @global object $wp_locale
+ * @global object $coc_locale
  * @since 2.1.0
  */
-$GLOBALS['wp_locale'] = new WP_Locale();
+$GLOBALS['coc_locale'] = new COC_Locale();
 
 // Load the functions for the active theme, for both parent and child theme if applicable.
-if ( ! defined( 'WP_INSTALLING' ) || 'wp-activate.php' === $pagenow ) {
+if ( ! defined( 'COC_INSTALLING' ) || 'wp-activate.php' === $pagenow ) {
 	if ( TEMPLATEPATH !== STYLESHEETPATH && file_exists( STYLESHEETPATH . '/functions.php' ) )
 		include( STYLESHEETPATH . '/functions.php' );
 	if ( file_exists( TEMPLATEPATH . '/functions.php' ) )
@@ -345,7 +345,7 @@ $GLOBALS['wp']->init();
  * to load on the init hook that follows (e.g. widgets), and many plugins instantiate
  * themselves on it for all sorts of reasons (e.g. they need a user, a taxonomy, etc.).
  *
- * If you wish to plug an action once WP is loaded, use the wp_loaded hook below.
+ * If you wish to plug an action once WP is loaded, use the coc_loaded hook below.
  *
  * @since 1.5.0
  */
@@ -370,4 +370,4 @@ if ( is_multisite() ) {
  *
  * @since 3.0.0
  */
-do_action( 'wp_loaded' );
+do_action( 'coc_loaded' );
