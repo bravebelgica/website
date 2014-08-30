@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <p>Hello {{name}}!</p>
+    
+    <a ng-href='#here' ng-click='go("test")' >click me</a>
+    <a ng-click='getItem()' href='' >Get From Service {{msg}}</a>
+    <div style='height:1000px'>
+      
+      <a id='here'></a>
+     
+    </div>
+     <h1>here</h1>
+
+
+	<script>
+	var app = angular.module('plunker', []);
+
+	app.controller('MainCtrl', function($scope, sharedProperties) {
+  	$scope.name = 'World';
+  
+  	$scope.go = function(item) {
+    	sharedProperties.setListName(item);
+	  }
+  
+	 $scope.getItem = function() {
+	    $scope.msg = sharedProperties.getListName();
+  	}
+});
+
+	app.service('sharedProperties', function () {
+	    var list_name = '';
+	  
+	    return {
+	  
+	        getListName: function() {
+	            return list_name;
+	        },
+	        setListName: function(name) {
+	            list_name = name;
+	        }
+	    };
+    
+   
+});
+	
+	
+	
+	</script>
+
+
+
+  </body>
+
+
+
+
+
+</html>

@@ -37,52 +37,24 @@
 
 <script>
 	
-	var reservatieApp = angular.module('reservatieApp', []);
+var reservatieApp = angular.module('reservatieApp', []);
 
-reservatieApp.controller('reservatieCtrl', function ($scope) {
-  $scope.reservaties = [
-    {'nummer': '1',
-     'player' : "oorlogszuchtig",
-     'reservatie' : '20/08/2014 15:01;12',
-     'aanval' : '18:00:00'   
-     },
-     {'nummer': '2',
-         'player' : "-",
-         'reservatie' : '-',
-         'aanval' : '-'   
-     },
-     {'nummer': '3',
-         'player' : "Sir Joske",
-         'reservatie' : '20/08/2014 17:20;01',
-         'aanval' : '20:00:00'   
-     },
-     {'nummer': '4',
-         'player' : "Tessa",
-         'reservatie' : '20/08/2014 12:02:30',
-         'aanval' : '19:00:00'   
-     },
-     {'nummer': '5',
-         'player' : "Laurentius",
-         'reservatie' : '20/08/2014 17:17;01',
-         'aanval' : '20:15:00'   
-     },
-     {'nummer': '6',
-         'player' : "Foxtrot",
-         'reservatie' : '20/08/2014 15:42:45',
-         'aanval' : '21:00:00'   
-     },
-     
-     {'nummer': '7',
-         'player' : "Clan 8",
-         'reservatie' : '20/08/2014 17:20;01',
-         'aanval' : '18:00:00'   
-     }
-     
-
-
-
-
-   ];
+reservatieApp.controller('reservatieCtrl', function ($scope, $http) {
+	$scope.oorlog_id = 1;
+	$scope.changeOorlog = function(id){
+		window.alert(id);
+		//window.alert($scope.oorlog_id);
+		$scope.oorlog_id = id;
+		
+	};
+	
+  url = "json/json_oorlog_reservaties.php?oorlog_id=" + $scope.oorlog_id;
+  
+  $http.get(url).success(function(response) {
+	  	window.alert(url);
+	    $scope.reservaties = response;
+  }).error(function (data){ return data});
+  
 });
 	
 </script>

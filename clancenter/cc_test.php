@@ -218,24 +218,29 @@
 
 				<!-- Table Striped -->
 				<div ng-app="reservatieApp" ng-controller="reservatieCtrl" class="block-area" id="tableStriped">
-					<h3 class="block-title">Reservaties</h3>
+					<h3 class="block-title"><a href ng-click='changeOorlog(2)'>Reservaties</a></h3>
 					<!-{{reservaties}}-->
 					<div class="table-responsive overflow">
 						<table  class="tile table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>No.</th>
+									<th>Level</th>
 									<th>ClanLid</th>
 									<th>Datum Reservatie</th>
 									<th>Aanval</th>
+									<th>Actie</th>
+									
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="reservatie in reservaties">
-									<td>{{reservatie.nummer}}</td>
-									<td>{{reservatie.player}}</td>
+								<tr ng-repeat="reservatie in reservaties" ng-click="changeOorlog(reservatie)"  >
+									<td >{{reservatie.nummer}}</td>
+									<td>{{reservatie.level}}</td>
+									<td>{{reservatie.alias}}</td>
 									<td>{{reservatie.reservatie}}</td>
 									<td>{{reservatie.aanval}}</td>
+									<td>Reserveer</td>
 								</tr>
 							</tbody>
 						</table>
