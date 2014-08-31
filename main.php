@@ -50,8 +50,13 @@ old integrated -->
 			<div class="menu-text">
 				<h3>MENU</h3>
 			</div>
-			<a href="#home-section">HOME</a> <a href="#about-section">CLAN</a> <a href="#member-section">LEDEN</a> <a href="#services-section">REGLEMENT</a> <a
-				href="#subscribe-section">INSCHRIJVEN</a> <a href="#subscribe-section">SCOREBOARD</a> <a href="#!" id="comm">INLOGGEN</a>
+			<a href="#home-section">HOME</a> 
+			<a href="#about-section">CLAN</a> 
+			<a href="#member-section">LEDEN</a> 
+			<a href="#services-section">REGLEMENT</a> 
+			<a href="#subscribe-section">INSCHRIJVEN</a> 
+			<a href="#subscribe-section">SCOREBOARD</a> 
+			<a href="clancenter/login.php" id="comm">INLOGGEN</a>
 		</nav>
 		<!-- ./Navigation links-->
 		<div id="social-links" class="Icon-trigger">

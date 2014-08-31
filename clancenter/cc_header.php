@@ -8,7 +8,7 @@
 <meta name="description" content="CoC, Clas of Clans, Strategy , tactics">
 <meta name="keywords" content="CoC, gaming, strategy , social">
 
-<title>Brae Belgica Clan - Control Center</title>
+<title>Brave Belgica Clan - Control Center</title>
 
 <!-- CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">

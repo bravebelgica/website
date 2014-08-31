@@ -10,7 +10,7 @@ $db_schema   = "bravebe1_bravebelgica";
 
 
 #onstruct query
-$query = "SELECT ORS.tegenstander_nummer as nummer,ORS.tegenstander_level as level ,ORS.id_clanplayer as id ,ORS.aanvaltijdstip as aanval, CP.alias as alias, ORS.reservatie_tijdstip reservatie FROM bravebe1_bravebelgica.cc_oorlog_reservaties ORS LEFT OUTER JOIN  cc_clanplayer CP   ON ORS.id_clanplayer =  CP.id_clanplayer  where ORS.id_oorlog=1"; 
+$query = "SELECT ORS.tegenstander_nummer as nummer,ORS.tegenstander_level as level ,ORS.id_clanplayer as id ,ORS.aanvaltijdstip as aanval, CP.alias as alias FROM bravebe1_bravebelgica.cc_oorlog_reservaties ORS LEFT OUTER JOIN  cc_clanplayer CP   ON ORS.id_clanplayer =  CP.id_clanplayer  where ORS.id_oorlog=1"; 
 
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
 #$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_SCHEMA);
@@ -41,7 +41,6 @@ while($row = mysqli_fetch_array($rs)) {
 	$row_array['id_clanplayer'] = $row['id'];
 	$row_array['alias'] = $row['alias'];
 	$row_array['aanval'] = $row['aanval'];
-	$row_array['reservatie'] = $row['reservatie'];
 	
 	 array_push($return_arr,$row_array);
 }

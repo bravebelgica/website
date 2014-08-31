@@ -10,8 +10,8 @@
 <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
 
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
 
+<script src="js/bootstrap.min.js"></script>
 
 
 
@@ -36,26 +36,89 @@
 <script src="js/angular.min.js"></script>
 
 <script>
-	
+
+function go(waarde){
+	alert(waarde);
+}
+
+$.ajaxSetup ({
+    cache: false
+});
+
+
 var reservatieApp = angular.module('reservatieApp', []);
+
+
+
+
+
+
+reservatieApp.controller('MainCtrl', function($scope) {
+  	$scope.name = 'World';
+  
+  	$scope.go = function() {
+    	alert('clicked');
+  		//sharedProperties.setListName(item);
+	  };
+  
+	 $scope.getItem = function() {
+	    $scope.msg = sharedProperties.getListName();
+  	};
+});
+  	
+
+reservatieApp.controller('simpelCtrl', function ($scope) {
+	$scope.waarde = 'initieel';
+
+	$scope.test =  function(){
+		alert('test');
+	};
+});
+	
 
 reservatieApp.controller('reservatieCtrl', function ($scope, $http) {
 	$scope.oorlog_id = 1;
 	$scope.changeOorlog = function(id){
-		window.alert(id);
-		//window.alert($scope.oorlog_id);
+		//window.alert(id);
 		$scope.oorlog_id = id;
-		
+		unique = String(new Date().getTime()); //dit is een hachk, zodanig angulr de cache niet gebruikt
+		 url = "json/json_oorlog_reservaties.php?oorlog_id=" + $scope.oorlog_id;
+		noncache_url = url + "&unique=" + unique;
+		//window.alert(id);
+		$scope.reservaties=null;
+		  $http.get(noncache_url, {cache:false}).success(function(response) {
+			  	//window.alert(noncache_url);
+			    $scope.reservaties = response;
+		  }).error(function (data){ 
+			  //window.alert(data)
+			  return data});
 	};
-	
-  url = "json/json_oorlog_reservaties.php?oorlog_id=" + $scope.oorlog_id;
-  
-  $http.get(url).success(function(response) {
-	  	window.alert(url);
-	    $scope.reservaties = response;
-  }).error(function (data){ return data});
-  
+
+	$scope.changeReservatie = function(nummer,id){
+		//window.alert(nummer);
+		nummer = String(nummer);
+		oorlogid = String($scope.oorlog_id);
+		id = String(id);
+		//window.alert(nummer);
+		var request_data = {
+				nummer : nummer,
+				oorlogid : oorlogid,
+				playerid : id 
+		};
+		//alert(request_data);
+		url = "json/json_reserveer_tegenstander.php";
+		$http.post(url,request_data ).success(function( status) {
+			$scope.status = status;
+		  	//window.alert(status);
+		  	$scope.changeOorlog(oorlogid);
+		  }).error(function (data){ return data});
+	};
 });
+
+
+$(document).on("click", ".clickme", function() {
+	  alert("click");
+	});
 	
 </script>
 
@@ -84,6 +147,8 @@ reservatieApp.controller('reservatieCtrl', function ($scope, $http) {
 <script src="js/feeds.min.js"></script>
 <!-- News Feeds -->
 
+<!--  Form Related -->
+<script src="js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
 
 <!-- All JS functions -->
 <script src="js/functions.js"></script>

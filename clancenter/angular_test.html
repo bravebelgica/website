@@ -5,21 +5,72 @@
     <meta charset="utf-8" />
     <title>AngularJS Plunker</title>
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>-->
     
   </head>
 
   <body ng-controller="MainCtrl">
     <p>Hello {{name}}!</p>
     
+    
+    
+    <div class="tile-config dropdown" >
+					<a data-toggle="dropdown" href="" class="tile-menu"></a>
+					<ul class="dropdown-menu pull-right text-right">
+						<li><a ng-click='go("test")' >Refresh </a></li>
+					</ul>
+				</div>
+    
+    
     <a ng-href='#here' ng-click='go("test")' >click me</a>
-    <a ng-click='getItem()' href='' >Get From Service {{msg}}</a>
+    <!-- <a ng-click='getItem()' href='' >Get From Service {{msg}}</a>-->
     <div style='height:1000px'>
       
       <a id='here'></a>
      
     </div>
      <h1>here</h1>
+
+
+<!-- Javascript Libraries -->
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Library -->
+<script src="js/jquery-ui.min.js"></script>
+<!-- jQuery UI -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+
+
+
+
+<!-- Charts -->
+<script src="js/charts/jquery.flot.js"></script>
+<!-- Flot Main -->
+<script src="js/charts/jquery.flot.time.js"></script>
+<!-- Flot sub -->
+<script src="js/charts/jquery.flot.animator.min.js"></script>
+<!-- Flot sub -->
+<script src="js/charts/jquery.flot.resize.min.js"></script>
+<!-- Flot sub - for repaint when resizing the screen -->
+
+<script src="js/sparkline.min.js"></script>
+<!-- Sparkline - Tiny charts -->
+<script src="js/easypiechart.js"></script>
+<!-- EasyPieChart - Animated Pie Charts -->
+<script src="js/charts.js"></script>
+<!-- All the above chart related functions -->
+
+<!-- angular -->
+<script src="js/angular.min.js"></script>
+
+
+
+
+
 
 
 	<script>
@@ -29,7 +80,8 @@
   	$scope.name = 'World';
   
   	$scope.go = function(item) {
-    	sharedProperties.setListName(item);
+    	alert('clicked');
+  		//sharedProperties.setListName(item);
 	  }
   
 	 $scope.getItem = function() {
@@ -49,13 +101,43 @@
 	            list_name = name;
 	        }
 	    };
-    
-   
 });
 	
-	
-	
 	</script>
+
+
+
+
+<!-- Map -->
+<script src="js/maps/jvectormap.min.js"></script>
+<!-- jVectorMap main library -->
+<script src="js/maps/usa.js"></script>
+<!-- USA Map for jVectorMap -->
+
+<!--  Form Related -->
+<script src="js/icheck.js"></script>
+<!-- Custom Checkbox + Radio -->
+
+<!-- UX -->
+<script src="js/scroll.min.js"></script>
+<!-- Custom Scrollbar -->
+
+<!-- Other -->
+<script src="js/calendar.min.js"></script>
+<!-- Calendar -->
+<script src="js/feeds.min.js"></script>
+<!-- News Feeds -->
+
+
+<!-- All JS functions -->
+<script src="js/functions.js"></script>
+
+
+
+
+
+
+
 
 
 

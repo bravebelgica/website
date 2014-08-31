@@ -9,12 +9,109 @@
 
 <!-- Main Widgets -->
 
-<div class="block-area">
+<div ng-app="reservatieApp" class="block-area">
 	<div class="row">
-
-
 		<!-- Linker Flap-->
-		<div class="col-md-8">
+		<div class="col-md-4">
+			<!--  Player/Clan Selection selection  -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="tile">
+						<h2 class="tile-title">Selecteer Clan</h2>
+						<div class="tile-config dropdown">
+							<a data-toggle="dropdown" href="" class="tile-menu"></a>
+							<ul class="dropdown-menu pull-right text-right">
+								<li><a class="tile-info-toggle" href="">Informatie</a></li>
+								<li><a href="">Refresh</a></li>
+								<li><a href="">Instellingen</a></li>
+							</ul>
+						</div>
+						<div class="table-responsive overflow">
+							<table class="tile table table-bordered table-hover ">
+								<tbody>
+									<tr>
+										<td>player</td>
+										<td>clan</td>
+										<td><button class="btn btn-s ">Selecteer</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- War selection -->
+				<div class="col-md-6">
+					<div class="tile">
+						<h2 class="tile-title">Selecteer Oorlog</h2>
+						<div class="tile-config dropdown">
+							<a data-toggle="dropdown" href="" class="tile-menu"></a>
+							<ul class="dropdown-menu pull-right text-right">
+								<li><a class="tile-info-toggle" href="">Informatie</a></li>
+								<li><a href="">Refresh</a></li>
+								<li><a href="">Instellingen</a></li>
+							</ul>
+						</div>
+
+						<div class="table-responsive overflow">
+							<table class="tile table table-bordered table-hover ">
+								<tbody>
+									<tr>
+										<td>een andere clan</td>
+										<td><button class="btn btn-s ">Selecteer</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="table-responsive overflow">
+				<table class="tile table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>Level</th>
+							<th>ClanLid</th>
+							<th>Datum Reservatie</th>
+							<th>Aanval</th>
+							<th>Actie</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>{{reservatie.nummer}}</td>
+							<td>{{reservatie.level}}</td>
+							<td>{{reservatie.alias}}</td>
+							<td>{{reservatie.reservatie}}</td>
+							<td>{{reservatie.aanval}}</td>
+							<!--  <td><a id="myLink" href="#" onclick="go('test');">Reserveer</a></td>-->
+							<td><button class="btn btn-xs ">Reserveer</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+
+		</div>
+
+		<!-- midden Flap-->
+		<div class="col-md-4" -controller="MainCtrl">
+			<!-- !!!!! PUT HERE A TEST FOR NG-CLICK !!!!!!! -->
+			<!-- 
+		<a href='javascript:go("test")' >Refresh </a>
+		-->
+			<!-- 
+		<a id="myLink" href="#" onclick="go('test');">link text</a>
+		-->
+			<!-- -->
+
+
+			<!-- -->
 			<!-- Main Chart -->
 			<div class="tile">
 				<h2 class="tile-title">Huidige Oorlog</h2>
@@ -26,6 +123,7 @@
 						<li><a href="">Instellingen</a></li>
 					</ul>
 				</div>
+				<!-- Row mid flap -->
 				<div class="row">
 					<div class="col-md-6">
 						<h2 class="text-left">Brave Belgica</h2>
@@ -48,156 +146,60 @@
 								</div>
 							</div>
 						</div>
-
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="side-border">
+							<small>Brave Belgica</small>
+							<div class="progress progress-medium">
+								<a href="#" data-toggle="tooltip" title="" class="progress-bar tooltips progress-bar-danger" style="width: 60%;" data-original-title="60%"> <span
+									class="sr-only">16 uren</span>
+								</a>
+							</div>
+						</div>
+						<div class="side-border">
+							<small>Brave Lil' Belg</small>
+							<div class="progress progress-medium">
+								<a href="#" data-toggle="tooltip" title="" class="tooltips progress-bar progress-bar-info" style="width: 43%;" data-original-title="43%"> <span
+									class="sr-only">O Uren</span>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 
+
+				<div class="tile">
+					<h2 class="tile-title">Bar Chart</h2>
+					<div class="tile-config dropdown">
+						<a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+						<ul class="dropdown-menu pull-right text-right">
+							<li><a href="">Refresh</a></li>
+							<li><a href="">Settings</a></li>
+						</ul>
+					</div>
+					<div class="p-10">
+						<div id="bar-chart" class="main-chart" style="height: 250px"></div>
+					</div>
+				</div>
+
+
+
+
+
+
+
 			</div>
 
+			<!-- End Row mid flap -->
 
 
 
 
 
 			<!--  Recent Postings -->
-			<div class="row">
-				<div class="col-md-6">
-					<div class="tile">
-						<h2 class="tile-title">Recent Postings</h2>
-						<div class="tile-config dropdown">
-							<a data-toggle="dropdown" href="" class="tile-menu"></a>
-							<ul class="dropdown-menu animated pull-right text-right">
-								<li><a href="">Refresh</a></li>
-								<li><a href="">Settings</a></li>
-							</ul>
-						</div>
-
-						<div class="listview narrow">
-							<div class="media p-l-5">
-								<div class="pull-left">
-									<img width="40" src="img/profile-pics/1.jpg" alt="">
-								</div>
-								<div class="media-body">
-									<small class="text-muted">2 Hours ago by Adrien San</small><br /> <a class="t-overflow" href="">Cras molestie fermentum nibh, ac semper</a>
-
-								</div>
-							</div>
-							<div class="media p-l-5">
-								<div class="pull-left">
-									<img width="40" src="img/profile-pics/2.jpg" alt="">
-								</div>
-								<div class="media-body">
-									<small class="text-muted">5 Hours ago by David Villa</small><br /> <a class="t-overflow" href="">Suspendisse in purus ut nibh placerat</a>
-
-								</div>
-							</div>
-							<div class="media p-l-5">
-								<div class="pull-left">
-									<img width="40" src="img/profile-pics/3.jpg" alt="">
-								</div>
-								<div class="media-body">
-									<small class="text-muted">On 15/12/2013 by Mitch bradberry</small><br /> <a class="t-overflow" href="">Cras pulvinar euismod nunc quis gravida.
-										Suspendisse pharetra</a>
-
-								</div>
-							</div>
-							<div class="media p-l-5">
-								<div class="pull-left">
-									<img width="40" src="img/profile-pics/4.jpg" alt="">
-								</div>
-								<div class="media-body">
-									<small class="text-muted">On 14/12/2013 by Mitch bradberry</small><br /> <a class="t-overflow" href="">Cras pulvinar euismod nunc quis gravida. </a>
-
-								</div>
-							</div>
-							<div class="media p-l-5">
-								<div class="pull-left">
-									<img width="40" src="img/profile-pics/5.jpg" alt="">
-								</div>
-								<div class="media-body">
-									<small class="text-muted">On 13/12/2013 by Mitch bradberry</small><br /> <a class="t-overflow" href="">Integer a eros dapibus, vehicula quam accumsan,
-										tincidunt purus</a>
-
-								</div>
-							</div>
-							<div class="media p-5 text-center l-100">
-								<a href=""><small>VIEW ALL</small></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Tasks to do -->
-				<div class="col-md-6">
-					<div class="tile">
-						<h2 class="tile-title">Tasks to do</h2>
-						<div class="tile-config dropdown">
-							<a data-toggle="dropdown" href="" class="tile-menu"></a>
-							<ul class="dropdown-menu pull-right text-right">
-								<li id="todo-add"><a href="">Add New</a></li>
-								<li id="todo-refresh"><a href="">Refresh</a></li>
-								<li id="todo-clear"><a href="">Clear All</a></li>
-							</ul>
-						</div>
-
-						<div class="listview todo-list sortable">
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox"> Curabitur quis nisi ut nunc gravida suscipis
-									</label>
-								</div>
-							</div>
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox"> Suscipit at feugiat dewoo
-									</label>
-								</div>
-
-							</div>
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox"> Gravida wendy lorem ipsum seen
-									</label>
-								</div>
-
-							</div>
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox"> Fedrix quis nisi ut nunc gravida suscipit at feugiat purus
-									</label>
-								</div>
-
-							</div>
-						</div>
-
-						<h2 class="tile-title">Completed Tasks</h2>
-
-						<div class="listview todo-list sortable">
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox" checked="checked"> Motor susbect win latictals bin the woodat cool
-									</label>
-								</div>
-
-							</div>
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox" checked="checked"> Wendy mitchel susbect win latictals bin the woodat cool
-									</label>
-								</div>
-
-							</div>
-							<div class="media">
-								<div class="checkbox m-0">
-									<label class="t-overflow"> <input type="checkbox" checked="checked"> Latictals bin the woodat cool for the win
-									</label>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div class="row"></div>
 			<div class="clearfix"></div>
 		</div>
 
@@ -207,21 +209,22 @@
 		<!-- rechter flap -->
 		<div class="col-md-4">
 			<!-- Dynamic Chart -->
-			<div class="tile">
+			<div class="tile" ng-controller="reservatieCtrl">
 				<h2 class="tile-title">Oorlogs Reservaties</h2>
 				<div class="tile-config dropdown">
+
 					<a data-toggle="dropdown" href="" class="tile-menu"></a>
 					<ul class="dropdown-menu pull-right text-right">
-						<li><a href="">Refresh</a></li>
+						<li><a ng-click='changeOorlog(1)'>Refresh {{waarde}}</a></li>
 					</ul>
 				</div>
+				<!--  OPGEPAST !!!! zet die class= "block-area" daar niet in want dit blokker alle links.bvb met ng-click  -->
+				<!-- Table Striped    class="block-area"-->
+				<div>
 
-				<!-- Table Striped -->
-				<div ng-app="reservatieApp" ng-controller="reservatieCtrl" class="block-area" id="tableStriped">
-					<h3 class="block-title"><a href ng-click='changeOorlog(2)'>Reservaties</a></h3>
 					<!-{{reservaties}}-->
 					<div class="table-responsive overflow">
-						<table  class="tile table table-bordered table-striped">
+						<table class="tile table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>No.</th>
@@ -230,17 +233,19 @@
 									<th>Datum Reservatie</th>
 									<th>Aanval</th>
 									<th>Actie</th>
-									
+
 								</tr>
 							</thead>
+
 							<tbody>
-								<tr ng-repeat="reservatie in reservaties" ng-click="changeOorlog(reservatie)"  >
-									<td >{{reservatie.nummer}}</td>
+								<tr ng-repeat="reservatie in reservaties" ng-click="changeReservatie(reservatie.nummer, 1)">
+									<td>{{reservatie.nummer}}</td>
 									<td>{{reservatie.level}}</td>
 									<td>{{reservatie.alias}}</td>
 									<td>{{reservatie.reservatie}}</td>
 									<td>{{reservatie.aanval}}</td>
-									<td>Reserveer</td>
+									<!--  <td><a id="myLink" href="#" onclick="go('test');">Reserveer</a></td>-->
+									<td><button class="btn btn-xs ">Reserveer</button></td>
 								</tr>
 							</tbody>
 						</table>
