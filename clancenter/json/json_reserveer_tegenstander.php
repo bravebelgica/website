@@ -1,5 +1,9 @@
 <?php 
+require_once( dirname(__FILE__) . '/center-config.php' );
+require_once( dirname(__FILE__) . '/center-connect.php' );
 
+$bStatus = true;
+$bList = false;
 
 // The request is a JSON request.
 // We must read the input.
@@ -27,24 +31,7 @@ error_log("Decode oorlog id : " . $oorlog_id);
 $player =  $objData['playerid'];
 error_log("Decode plyer : " . $player);
 
-$bStatus = true;
-$bList = false;
 
-## DB INSERT (registrations)
-$db_host = "localhost";
-$db_user = "bravebe1_laurent";
-$db_pass = "bungee.7";
-$db_schema   = "bravebe1_bravebelgica";
-
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
-#$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_SCHEMA);
-if (!$conn) {
-	#echo "Could not connect to server\n";
-	#trigger_error(mysqli_error(), E_USER_ERROR);
-	$status="DBERR";
-	return null;
-
-} 
 $sql = "UPDATE cc_oorlog_reservaties SET id_clanplayer = {$player}, reservatie_tijdstip=now() WHERE tegenstander_nummer={$nummer} AND id_oorlog={$oorlog_id}";
 //update cc_oorlog_reservaties set id_clanplayer=1 where tegenstander_nummer=22 and id_oorlog=1;
 

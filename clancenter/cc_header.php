@@ -20,19 +20,26 @@
 <link href="css/icons.css" rel="stylesheet">
 <link href="css/generics.css" rel="stylesheet">
 </head>
-<body id="skin-blur-greenish">
+<!-- <body ng-app="cc" ng-controller="ApplicationController" id="skin-blur-greenish">-->
 
-	<header id="header" class="media">
+<body ng-app="ccApp" ng-controller="MainCtrl" id="skin-blur-greenish">
+
+
+
+
+	<header id="header" class="media " ng-show="authorized">
 		<a href="" id="menu-toggle"></a> <a class="logo pull-left" href="index.html"><b>Brave Belgica</b></a>
 
 		<div class="media-body">
 			<div class="media" id="top-menu">
+
 				<div class="pull-left tm-icon">
-					<a data-drawer="messages" class="drawer-toggle" href=""> <i class="sa-top-message"></i> <i class="n-count animated">5</i> <span>Berichten</span>
+					
+					<a data-drawer="messages" class="drawer-toggle" href=""> <i class="sa-top-message"></i> <i class="n-count animated">3</i> <span>Berichten</span>
 					</a>
 				</div>
 				<div class="pull-left tm-icon">
-					<a data-drawer="notifications" class="drawer-toggle" href=""> <i class="sa-top-updates"></i> <i class="n-count animated">9</i> <span>Updates</span>
+					<a data-drawer="notifications" class="drawer-toggle" href=""> <i class="sa-top-updates"></i> <i class="n-count animated">5</i> <span>Updates</span>
 					</a>
 				</div>
 				<div id="time" class="pull-right">

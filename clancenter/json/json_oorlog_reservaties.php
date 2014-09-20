@@ -1,29 +1,11 @@
 <?php 
+require_once( dirname(__FILE__) . '/center-config.php' );
+require_once( dirname(__FILE__) . '/center-connect.php' );
+
 $bStatus = true;
 $bList = false;
-
-## DB INSERT (registrations)
-$db_host = "localhost";
-$db_user = "bravebe1_laurent";
-$db_pass = "bungee.7";
-$db_schema   = "bravebe1_bravebelgica";
-
-
-#onstruct query
 $query = "SELECT ORS.tegenstander_nummer as nummer,ORS.tegenstander_level as level ,ORS.id_clanplayer as id ,ORS.aanvaltijdstip as aanval, CP.alias as alias, ORS.reservatie_tijdstip reservatie FROM bravebe1_bravebelgica.cc_oorlog_reservaties ORS LEFT OUTER JOIN  cc_clanplayer CP   ON ORS.id_clanplayer =  CP.id_clanplayer  where ORS.id_oorlog=1"; 
-
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
-#$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_SCHEMA);
-if (!$conn) {
-	#echo "Could not connect to server\n";
-	#trigger_error(mysqli_error(), E_USER_ERROR);
-	$status="DBERR";
-	return null;
-
-} 
 $rs = mysqli_query($conn,$query);
-
-
 
 $return_arr = array();
 
@@ -43,10 +25,8 @@ while($row = mysqli_fetch_array($rs)) {
 	$row_array['aanval'] = $row['aanval'];
 	$row_array['reservatie'] = $row['reservatie'];
 	
-	 array_push($return_arr,$row_array);
+	array_push($return_arr,$row_array);
 }
-
-
 
 echo json_encode($return_arr);
 

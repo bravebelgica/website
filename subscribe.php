@@ -4,6 +4,7 @@
 $subscriber .= $_REQUEST['Email'];
 
 if (filter_var($subscriber, FILTER_VALIDATE_EMAIL)) {
+	$status=VALID;
 	$location = "/status.php?status=" . $status . "&email=" . $subscriber;
 } else {
 	$status="INVALID";
@@ -19,8 +20,6 @@ require( dirname(__FILE__) . '/coc-load.php' );
 
 $err = '';
 $status = 'VALID';
-# RESULT PAGE
-$location = "/index.html";
 
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 $user_ip = $_SERVER['REMOTE_ADDR'];
@@ -56,11 +55,6 @@ if (!$rs) {
 }
 $row = mysqli_fetch_row($rs);
 echo "Version: $row[0]\n";
-
-
-
-
-
 
 
 # LIST EMAIL ADDRESS

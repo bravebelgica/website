@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html  ng-app="ccApp">
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -18,13 +19,14 @@
 <link href="css/generics.css" rel="stylesheet">
 </head>
 
-<body ng-app="cc" ng-controller="ApplicationController" id="skin-blur-greenish">
+<body  ng-controller="ApplicationController" id="skin-blur-greenish">
 
 	<section id="login">
 		<header>
 			<h1>Brave Belgica Clan</h1>
 			<br>
 			<p>U krijgt alleen toegang tot ons clan commando centrum met een geldige account</p>
+<p>{{loc}} {{test}}</p>
 		</header>
 
 		<div class="clearfix"></div>
@@ -51,15 +53,23 @@
 		-->
 
 		<!-- Login -->
+<p>{{loc}} {{test}}</p>
+		<ul>
+		<li ng-repeat="role in userRoles">{{role}}</li>
+		</ul>
+		
+		
+		<div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
+		<div ng-if="isAuthorized(userRoles.Leider)">You're Leider.</div>
 		<form class="box tile animated active" id="box-login" ng-controller="LoginController" ng-submit="login(credentials)">
 			<h2 class="m-t-0 m-b-15">Login</h2>
-			<input type="text" class="login-control m-b-10" placeholder="Email" ng-model="username"> 
-			<input type="password" class="login-control" placeholder="Paswoord"	ng-model="password">
+			<input type="text" class="login-control m-b-10" placeholder="Email" ng-model="credentials.username"> 
+			<input type="password" class="login-control" placeholder="Paswoord"	ng-model="credentials.password">
 			<div class="checkbox m-b-20">
-				<label> <input type="checkbox"> Remember Me
+				<label> <input type="checkbox" ng-model="persistent"> Onthoud mij
 				</label>
 			</div>
-			<button class="btn btn-sm m-r-5">Sign In</button>
+			<button class="btn btn-alt m-r-5">Inloggen</button>
 
 			<small> <a class="box-switcher" data-switch="box-register" href="">Heb je geen account?</a> of <a class="box-switcher" data-switch="box-reset" href="">Paswoord
 					vergeten?</a>
@@ -118,11 +128,16 @@
 
 	<script>
        
-        var ccApp = angular.module('cc', []);
+        var ccApp = angular.module('ccApp', []);
+
+	 ccApp.controller('ApplicationController', function ($location, $scope, $rootScope) {
+		$scope.test = "test" ;	
+		$scope.loc = $location.host() ;	   
+        });
         
-        
-        ccApp.controller('LoginController', function ($scope, $rootScope, AUTH_EVENTS, AuthService) {
-		  $scope.credentials = {
+        ccApp.controller('LoginController', function ($location, $scope, $rootScope, AUTH_EVENTS, AuthService) {
+$scope.loc = $location.host() ;	   	
+$scope.credentials = {
 		    username: '',
 		    password: ''
 		  };

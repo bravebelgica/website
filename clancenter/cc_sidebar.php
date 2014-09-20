@@ -1,5 +1,5 @@
 
-	<section id="main" class="p-relative" role="main">
+	<section id="main" class="p-relative" role="main" ng-show="authorized">
 
 		<!-- Sidebar -->
 		<aside id="sidebar">
@@ -14,7 +14,7 @@
 						<li><a href="">Mijn Profiel</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
 						<li><a href="">Berichten</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
 						<li><a href="">Instelingen</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
-						<li><a href="">Uitloggen</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+						<li><a ng-click="exit()" href="">Uitloggen</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
 					</ul>
 					<h4 class="m-0">[Naam Speler]</h4>
 					[eventueel tweet tag]
@@ -26,7 +26,7 @@
 				</div>
 
 				<!-- Feeds -->
-				<div class="s-widget m-b-25">
+				<div class="s-widget m-b-25" ng-show="false">
 					<h2 class="tile-title">Nieuws Feeds</h2>
 
 					<div class="s-widget-body">
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 
-				<!-- Projects -->
+				<!-- oorlogen -->
 				<div class="s-widget m-b-25">
 					<h2 class="tile-title">Oorlogen </h2>
 
@@ -64,13 +64,13 @@
 
 			<!-- Side Menu -->
 			<ul class="list-unstyled side-menu">
-				<li class="active"><a class="sa-side-home" href="index.php?content=test"> <span class="menu-item">Commando Center</span>
+				<li class="active"><a class="sa-side-home" href="#/warroom"> <span class="menu-item">Commando Center</span>
 				</a></li>
-				<li><a class="sa-side-typography" href="index.php?content=typography"> <span class="menu-item">Typography</span>
+				<li><a class="sa-side-typography" href="#/test"> <span class="menu-item">Clan Info</span>
 				</a></li>
-				<li><a class="sa-side-widget" href="index.php?content=widgets"> <span class="menu-item">Widgets</span>
+				<li><a class="sa-side-widget" href=""> <span class="menu-item">Planning</span>
 				</a></li>
-				<li><a class="sa-side-table" href="tables.html"> <span class="menu-item">Tables</span>
+				<li><a class="sa-side-table" href="#/planning"> <span class="menu-item">Tables</span>
 				</a></li>
 				<li class="dropdown"><a class="sa-side-form" href=""> <span class="menu-item">Form</span>
 				</a>
@@ -230,12 +230,13 @@
 				</div>
 			</div>
 
-			<!-- Breadcrumb -->
+			<!-- 
 			<ol class="breadcrumb hidden-xs">
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Library</a></li>
 				<li class="active">Data</li>
 			</ol>
+			Breadcrumb -->
 		
 		
 		
